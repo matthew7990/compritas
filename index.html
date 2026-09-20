@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compritas</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+       background:#f6f1e7;font-family:Georgia,'Times New Roman',serif;color:#0f2340}
+  .card{text-align:center;padding:40px}
+  h1{font-size:42px;margin:0 0 8px;letter-spacing:-.02em}
+  p{color:#5a6474;margin:0 0 20px}
+  a{color:#0f2340;font-weight:700}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Compritas</h1>
+  <p id="msg">Redirigiendo al supermercado…</p>
+  <a id="link" href="#">Abrir Compritas</a>
+</div>
+<script>
+fetch('url.txt?'+Date.now()).then(r=>r.text()).then(u=>{
+  u=u.trim();
+  if(u.startsWith('http')){ document.getElementById('link').href=u; location.replace(u); }
+}).catch(()=>{ document.getElementById('msg').textContent='No se pudo resolver la dirección actual.' });
+</script>
+</body>
+</html>
