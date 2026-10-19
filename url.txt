@@ -1,1 +1,1 @@
-https://demonstrates-oscar-bonus-receiver.trycloudflare.com
+https://api.trycloudflare.com
